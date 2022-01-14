@@ -1,0 +1,165 @@
+{% extends 'signed_IN/base.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="client_">
+
+        <section class="left_side" left_side id="left_side">
+            <div class="header">
+                <div class="top">
+                    <p class="title">Departure status : in transit {{ data["start_date"] }}</p>
+                    <div class="progress_bar">
+                        <div class="progress" style="width: {{ data["distance"] }}%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                {% for x in route %}
+                <div class="box">
+                    <div class="status_bar">
+                        <div class="icon"></div>
+                    </div>
+                    <div class="left">
+                        <p class="product_status">{{ x["status"] }}</p>
+                        <p class="location">{{ x["location"] }} - {{ data["destination_country"] }}</p>
+                    </div>
+                    <div class="right">
+                        <p class="date">{{ x["date"] }}</p>
+                        <p class="time">{{ x["time"] }} PST</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="middle_side" middle_side>
+            <div class="header">
+                <div class="box">
+                    <p class="name">Tracking No</p>
+                    <p class="value track">{{ data["track_ID"] }}</p>
+                </div>
+                <div class="box">
+                    <p class="name">Carrier</p>
+                    <p class="value">{{ data["origin_country"] }} postal service</p>
+                </div>
+                <div class="box">
+                    <p class="name">Service level</p>
+                    <p class="value">first class</p>
+                </div>
+            </div>
+            <div class="user_map" id="user_map">
+
+            </div>
+        </section>
+        <section class="right_side" id="right_side" right_side>
+            <div class="header">
+                <p class="text">Shipment Overview</p>
+            </div>
+            <div class="body">
+                <div class="box">
+                    <div class="icon">
+                        <div><i class="ri-map-pin-2-fill"></i></div>
+                    </div>
+                    <div class="details">
+                        <p class="title">Ship From</p>
+                        <div class="desc">
+                            <p origin_>{{ data["origin_country"] }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <div><i class="ri-map-pin-4-fill"></i></div>
+                    </div>
+                    <div class="details">
+                        <p class="title">Ship To</p>
+                        <div class="desc">
+                            <p destination_="{{ data["destination_country"] }}">{{ data["product_address"] }}</p>
+                            <p>{{ data["reciever_phone"] }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <div><i class="ri-calendar-check-fill"></i></div>
+                    </div>
+                    <div class="details">
+                        <p class="title">Pickup and Delivery</p>
+                        <div class="desc">
+                            <p>Pickup Delivery Date : {{ data["end_date"] }}</p>
+                            <p>Pickup Delivery Time : 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <div><i class="ri-shopping-cart-2-line"></i></div>
+                    </div>
+                    <div class="details">
+                        <p class="title">Package Details</p>
+                        <div class="desc">
+                            <p>{{ data["product_name"] }}</p>
+                            <p>Weight : 90.00 lbs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <div><i class="ri-star-fill"></i></div>
+                    </div>
+                    <div class="details">
+                        <p class="title">Additional Info</p>
+                        <div class="desc">
+                            <div class="mini_box">
+                                <p class="name">Invoice No</p>
+                                <p class="value">INV 9289</p>
+                            </div>
+                            <div class="mini_box">
+                                <p class="name">Ship Date</p>
+                                <p class="value">{{ data["start_date"] }} @ 12:00 PM</p>
+                            </div>
+                            <div class="mini_box">
+                                <p class="name">Mode</p>
+                                <p class="value">Cargo Ship</p>
+                            </div>
+                            <div class="mini_box">
+                                <p class="name">Receiver</p>
+                                <p class="value">{{ data["receiver_name"] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="chat_bot" client_side>
+            <div class="chat_container" chat_container>
+                <header class="header">
+                    <button class="ri-arrow-left-line" mobile_btn></button>
+                    <div class="right">
+                        <div class="pf">
+                            <img src="../../static/img/gallery/team2.png">
+                        </div>
+                        <p class="name">Customer Support</p>
+                    </div>
+                </header>
+                <div class="chatroom" chatroom>
+
+                </div>
+                <div class="user-input">
+                    <div class="box">
+                        <input type="file" accept="image/*" hidden id="img" add_image>
+                        <label class="ri-image-add-line add-file" for="img"></label>
+                        <div contenteditable="true" class="msg_input active" msg_input></div>
+                        <button class="ri-send-plane-line send-btn" msg_sendBtn></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ri-chat-3-line chat_opener" chat_opener></div>
+
+    </div>
+
+
+{% endblock %}

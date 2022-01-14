@@ -1,0 +1,806 @@
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url('../fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins/Poppins-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: "ABeeZee";
+    src: url('../fonts/ABeeZee/ABeeZee-Regular.ttf');
+}
+
+* {
+    font-family: "Poppins";
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /*user-select: none;*/
+}
+
+.btn {
+    background: #ff5f13;
+    border: none;
+    color: white;
+    font-family: 'ABeeZee';
+    margin: 10px;
+    padding: 10px 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.08);
+    position: relative;
+    height: 100vh;
+}
+
+.index {
+
+}
+
+.index > .nav {
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.index > .nav > .title {
+    padding: 0 10px;
+    font-size: 17px;
+    font-family: 'ABeeZee';
+}
+
+.index .main-card.mb-3.card {
+    width: 99%;
+    margin: 1em auto;
+    border: 1px solid lightgray;
+    background: white;
+}
+
+.index .table-responsive {
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.index .card-header {
+    padding: 20px;
+    font-family: 'Poppins-Bold';
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+
+}
+
+.index .card-header .add-new {
+    background: #ff5f13;
+    border: none;
+    color: white;
+    font-family: 'ABeeZee';
+    margin: 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 0.7em;
+}
+
+
+.index .table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.index .btn-success {
+    background: #ff5f13;
+    border: none;
+    color: white;
+    font-family: "Poppins";
+    margin: 10px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.index thead {
+    text-align: left;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.index tr {
+    border-collapse: collapse;
+}
+
+.index th {
+    padding: 10px;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: unset;
+    font-family: 'ABeeZee';
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.index .widget-content-wrapper {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+}
+
+.index .rounded-circle {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.index .product_img {
+    height: 45px;
+    width: 45px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.index td {
+    padding: 10px;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.index .add_user_form {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.48);
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+
+}
+
+.index .add_user_form .cover {
+    background: white;
+    width: 70%;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.index .add_user_form .cover header {
+    position: relative;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.index .add_user_form .cover header .title {
+    letter-spacing: 0.5px;
+}
+
+.index .add_user_form .cover header .icon {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.index .add_user_form .cover form {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto;
+    padding: 15px;
+
+
+}
+
+.index .add_user_form .cover form .box label {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.58);
+}
+
+
+.index .add_user_form .cover form input {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+    border-radius: 5px;
+    height: 45px;
+    outline: none;
+
+}
+
+.index .add_user_form .cover form textarea {
+    padding: 10px;
+    resize: unset;
+    height: 85px;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+    border-radius: 5px;
+    outline: none;
+
+}
+
+.index .add_user_form .cover form button {
+    background: #ff5f13;
+    border: none;
+    color: white;
+    font-family: "Poppins";
+    margin: 10px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    width: 150px;
+}
+
+
+/*-------chat----------------*/
+
+/*===GroupChat ChatRoom====*/
+.chat_bot {
+    position: fixed;
+    width: 400px;
+    height: 565px;
+    right: 45px;
+    bottom: 74px;
+    z-index: -1;
+
+}
+
+
+.chat_bot .chat_container {
+    height: 100%;
+    background: white;
+    box-shadow: 0 11px 14px 13px rgba(33, 33, 33, 0.06);
+    border-radius: 10px 10px 0 10px;
+    display: none;
+}
+
+.chat_bot .chat_container .workstream {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: none;
+}
+
+
+.chat_bot .chat_container .workstream .header {
+    display: flex;
+    background: #F66F6F;
+    align-items: center;
+    padding: 0 7px;
+    height: 80px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 4;
+}
+
+.chat_bot .chat_container .workstream .header .close_chat {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 27px;
+}
+
+.chat_bot .chat_container .workstream .header .name {
+    color: white;
+    font-family: 'ABeeZee';
+    text-transform: capitalize;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 48%;
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat_bot .chat_container .workstream .header .right {
+    display: flex;
+    align-items: center;
+}
+
+.chat_bot .chat_container .workstream .header .right .back-btn {
+    background: none;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 30px;
+    font-size: 33px;
+    cursor: pointer;
+}
+
+.chat_bot .chat_container .workstream .header .right .pf img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.chat_bot .chat_container .workstream .header .right .name {
+    margin: 0 0 0 7px;
+    color: white;
+    font-family: "ABeeZee";
+}
+
+
+.chat_bot .chat_container > .workstream div.chatroom {
+    padding: 0 10px;
+    height: calc(100% - 150px);
+    overflow: auto;
+    margin: 80px 0;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom > div.others {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom > div.me {
+
+}
+
+.chat_bot .chat_container > .workstream div.chatroom > div.me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0.5em 0;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom > div.me div.message {
+    background-color: #F66F6F;
+    color: white;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom > div.me img.pf {
+    margin-left: 5px;
+}
+
+
+.chat_bot .chat_container > .workstream div.chatroom img.pf {
+    height: 1.5em;
+    width: 1.5em;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom div.message {
+
+}
+
+.chat_bot .chat_container > .workstream div.chatroom div.message {
+    background: aliceblue;
+    padding: 5px 1em;
+    border-radius: 5px;
+    margin-left: 5px;
+    width: auto;
+    max-width: 80%;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom div.message > p.name {
+    font-family: 'Montserrat-bold';
+    font-size: 0.5em;
+    line-height: 1.8em;
+    letter-spacing: 0.5px;
+    margin: 2px;
+    color: rgba(0, 0, 0, 0.53);
+
+}
+
+.chat_bot .chat_container > .workstream div.chatroom div.message > img.msg-img {
+    width: 190px;
+    height: 190px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.chat_bot .chat_container > .workstream div.chatroom div.message > p.text {
+    font-size: 0.9em;
+    line-height: 1.8em;
+    letter-spacing: 0.5px;
+    font-family: "ABeeZee";
+    color: black;
+    margin-bottom: 0;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom .me div.message > p.text {
+    color: white;
+}
+
+.chat_bot .chat_container > .workstream div.chatroom div.message > p.text a {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+.chat_bot .chat_container > .workstream div.user-input {
+    background: white;
+    padding: 0 10px;
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid #0000004d;
+    position: absolute;
+    bottom: 0;
+}
+
+.chat_bot .chat_container > .workstream div.user-input > div.box {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.chat_bot .chat_container > .workstream div.user-input > div.box > label.add-file {
+    margin: 0 0.5em;
+    color: #F66F6F;
+    font-size: 25px;
+}
+
+
+.chat_bot .chat_container > .workstream div.user-input > div.box > .msg_input:before {
+    font-family: ABeeZee;
+    font-size: 14px;
+    content: none;
+    color: #999999;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.chat_bot .chat_container > .workstream div.user-input > div.box > .msg_input:empty:before {
+    content: "Type message..";
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+.chat_bot .chat_container > .workstream div.user-input > div.box > .msg_input {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    font-family: ABeeZee, sans-serif;
+    font-size: 15px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
+.chat_bot .chat_container > .workstream div.user-input > div.box > .send-btn {
+    color: #F66F6F;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.chat_bot .chat_container > .workstream div.img-viewer {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+}
+
+.chat_bot .chat_container > .workstream div.img-viewer > i.back-btn {
+    position: absolute;
+    color: white;
+    left: 0.5em;
+    top: 0.5em;
+    font-size: 1.2em;
+}
+
+.chat_bot .chat_container > .workstream div.img-viewer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.chat_opener {
+    height: 60px;
+    width: 60px;
+    background: #ff5f13;
+    border-radius: 50% 0 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    right: 40px;
+    position: fixed;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    bottom: 10px;
+}
+
+.chat_bot .chat_container .chat_list {
+    height: 100%;
+    width: 100%;
+}
+
+.chat_bot .chat_container .chat_list .header {
+    height: 10%;
+    background: #ff5f13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.chat_bot .chat_container .chat_list .header button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 10px;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .chat_bot .chat_container .chat_list .header button {
+        display: block;
+    }
+
+}
+
+.logout {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 20px;
+    font-family: 'ABeeZee';
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.chat_bot .chat_container .chat_list .header p {
+    color: white;
+    font-family: 'ABeeZee';
+    font-size: 17px;
+}
+
+
+.chat_bot .chat_container .chat_list .chat_box {
+    height: 90%;
+    overflow: auto;
+}
+
+.chat_bot .chat_container .chat_list .chat_box .box:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.chat_bot .chat_container .chat_list .chat_box .box {
+    border-bottom: 1px solid #8080804a;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.chat_bot .chat_container .chat_list .chat_box .box .name {
+    font-family: 'ABeeZee';
+    font-size: 16px;
+}
+
+.chat_bot .chat_container .chat_list .chat_box .box .msg {
+    font-family: 'ABeeZee';
+    font-size: 13px;
+    margin-top: 9px;
+    color: #808080cf;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 88%;
+    text-overflow: ellipsis;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .index .add_user_form .cover {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .index .add_user_form .cover form {
+        grid-template-columns: auto;
+    }
+
+    .index .table-responsive {
+        overflow-y: hidden;
+    }
+
+    .chat_bot {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        top: 0;
+        z-index: -1;
+    }
+
+    .chat_bot .chat_container {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 100%;
+        z-index: 2;
+    }
+
+}
+
+.signup {
+    height: 100vh;
+    width: 100vw;
+    background: url(../img/2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(8px);
+    position: relative;
+}
+
+[signup_form] {
+    background: #000000eb;
+    width: 365px;
+    display: inline-block;
+    padding: 20px 30px;
+    height: 350px;
+    border-radius: 11px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+[signup_form] .title {
+    text-align: center;
+    font-family: 'ABeeZee';
+    font-size: 22px;
+    color: white;
+}
+
+[signup_form] .box {
+    margin: 2em 0;
+    border: 1px solid white;
+    width: 300px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+[signup_form] .box i {
+    font-size: 1em;
+    color: gray;
+}
+
+[signup_form] .box input::placeholder {
+    color: white;
+    font-family: 'ABeeZee', sans-serif;
+
+}
+
+[signup_form] .box input {
+
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    transition-delay: 3600s;
+    font-family: 'ABeeZee', sans-serif;
+
+}
+
+[signup_form] .box input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    margin-left: 7px;
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 1em;
+    height: 100%;
+    color: white;
+}
+
+[signup_form] .submit {
+    background: white;
+    color: black;
+    font-family: 'ABeeZee';
+    border: none;
+    padding: 11px 35px;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    right: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    [signup_form] {
+        width: 95%;
+    }
+
+    [signup_form] .box {
+        width: 100%;
+    }
+
+}
+

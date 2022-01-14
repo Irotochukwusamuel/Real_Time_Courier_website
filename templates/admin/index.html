@@ -1,0 +1,216 @@
+{% extends 'admin/base.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <section class="index">
+        <nav class="nav">
+            <p class="title">Admin Panel</p>
+            <a href="/logout" class="logout btn">Logout</a>
+        </nav>
+        <div class="main-card mb-3 card">
+            <div class="card-header">
+                <p>ALL TICKETS</p>
+                <button class="add-new" show_add_user_form>ADD TICKET</button>
+            </div>
+            <div class="table-responsive">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th class="text-center">ID</th>
+                        <th>Name</th>
+                        <th class="text-center">Phone Num</th>
+                        <th class="text-center">Destination</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Product Name</th>
+                        <th class="text-center">Product Image</th>
+                        <th class="text-center">Distance</th>
+                        <th class="text-center">Update Route</th>
+                        <th class="text-center">Add Alert</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for result in data %}
+                        <tr row_id="{{ result["track_ID"] }}">
+                            <td class="text-center text-muted">{{ result["id"] }}</td>
+                            <td class="text-center text-muted">{{ result["track_ID"] }}</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left mr-3">
+                                            <div class="widget-content-left">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">{{ result["receiver_name"] }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">{{ result["receiver_phone"] }}</td>
+                            <td class="text-center">{{ result["origin_country"] }}
+                                <-> {{ result["destination_country"] }}</td>
+                            <td class="text-center">{{ result["delivery_price"] }}</td>
+                            <td class="text-center">{{ result["start_date"] }} <-> {{ result["end_date"] }}</td>
+                            <td class="text-center">{{ result["product_address"] }}</td>
+                            <td class="text-center">
+                                <div class="badge badge-warning">{{ result["product_name"] }}</div>
+                            </td>
+                            <td class="text-center">
+                                <img src="{{ loc  + result["track_ID"] + '/' + result["product_photo"] }}"
+                                     class="product_img">
+                            </td>
+
+                            <td class="text-center">
+                                <select distance_toggle>
+                                    <option value="0" {% if  result["distance"] == "0" %} {{ "selected" }} {% endif %} >
+                                        0%
+                                    </option>
+                                    <option value="10"  {% if  result["distance"] == "10" %}
+                                        {{ "selected" }} {% endif %}>10%
+                                    </option>
+                                    <option value="20"  {% if  result["distance"] == "20" %}
+                                        {{ "selected" }} {% endif %}>20%
+                                    </option>
+                                    <option value="30"  {% if  result["distance"] == "30" %}
+                                        {{ "selected" }} {% endif %}>30%
+                                    </option>
+                                    <option value="40"  {% if  result["distance"] == "40" %}
+                                        {{ "selected" }} {% endif %}>40%
+                                    </option>
+                                    <option value="50"  {% if  result["distance"] == "50" %}
+                                        {{ "selected" }} {% endif %}>50%
+                                    </option>
+                                    <option value="60"  {% if  result["distance"] == "60" %}
+                                        {{ "selected" }} {% endif %}>60%
+                                    </option>
+                                    <option value="70"  {% if  result["distance"] == "70" %}
+                                        {{ "selected" }} {% endif %}>70%
+                                    </option>
+                                    <option value="80"  {% if  result["distance"] == "80" %}
+                                        {{ "selected" }} {% endif %}>80%
+                                    </option>
+                                    <option value="90"  {% if  result["distance"] == "90" %}
+                                        {{ "selected" }} {% endif %}>90%
+                                    </option>
+                                    <option value="100"  {% if  result["distance"] == "100" %}
+                                        {{ "selected" }} {% endif %}>100%
+                                    </option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="btn ri-map-pin-line" update_routeBTN></button>
+                            </td>
+                            <td>
+                                <button class="btn ri-notification-3-line" add_alertBTN></button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <div class="add_user_form" add_user_form>
+            <div class="cover">
+                <header>
+                    <p class="title">ADD TICKET</p>
+                    <button class="icon ri-close-line" close_add_user_form></button>
+                </header>
+                <form add_ticket>
+
+                    <div class="box ">
+                        <label>Product Photo</label>
+                        <input type="file" accept="image/*" name="product_photo">
+                    </div>
+
+                    <input type="text" placeholder="Receiver FullName" name="fullname">
+                    <input type="text" placeholder="Receiver Phone Number" name="phone_number">
+                    <input type="text" placeholder="Start Date" name="start_date">
+                    <input type="text" placeholder="End Date" name="end_date">
+                    <input type="text" placeholder="Origin Country" name="origin">
+                    <input type="text" placeholder="Destination Country" name="destination">
+                    <input type="text" placeholder="Product Name" name="product_name">
+                    <textarea type="text" placeholder="Delivery Address" name="delivery_address"></textarea>
+                    <input type="text" placeholder="Delivery Price" name="delivery_price">
+                    <button type="submit">Add Ticket</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="add_user_form" update_route_form>
+            <div class="cover">
+                <header>
+                    <p class="title">UPDATE ROUTE</p>
+                    <button class="icon ri-close-line" close_add_user_form></button>
+                </header>
+                <form update_route>
+                    <input type="text" placeholder="New Location" name="location">
+                    <input type="text" placeholder="Status of Shipping" name="status">
+                    <input type="date" placeholder="Date" name="date">
+                    <input type="time" placeholder="Time" name="time">
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+
+         <div class="add_user_form" add_alert_form>
+            <div class="cover">
+                <header>
+                    <p class="title">ADD ALERT</p>
+                    <button class="icon ri-close-line" close_add_user_form></button>
+                </header>
+                <form update_alert>
+                    <input  type="text" placeholder="Add Alert" name="alert_message" >
+
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="ri-chat-3-line chat_opener" chat_opener></div>
+
+    </section>
+    <div class="chat_bot" admin>
+        <div class="chat_container" chat_container>
+
+            <div class="chat_list" chat_list>
+                <div class="header">
+                    <button class="ri-arrow-left-line" mobile_btn></button>
+                    <p>All Chats</p>
+                </div>
+                <div class="chat_box" chat_box>
+
+                </div>
+
+            </div>
+
+            <div class="workstream" workstream>
+                <header class="header">
+                    <div class="right">
+                        <button class="ri-arrow-left-s-line back-btn" backBTN></button>
+                    </div>
+                    <p class="name" chatName></p>
+                </header>
+                <div class="chatroom" chatroom>
+
+                </div>
+                <div class="user-input">
+                    <div class="box">
+                        <input type="file" accept="image/*" hidden id="img" add_image>
+                        <label class="ri-image-add-line add-file" for="img" ></label>
+                        <div contenteditable="true" class="msg_input active" msg_input></div>
+                        <button class="ri-send-plane-line send-btn" msg_sendBtn></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

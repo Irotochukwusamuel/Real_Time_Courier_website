@@ -1,0 +1,76 @@
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Logistic Express </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename="img/favicon.ico") }} ">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for("static", filename='css/flaticon.css') }} ">
+    <link rel="stylesheet" href="{{ url_for("static", filename='remixicon/remixicon.css') }}">
+    <link rel="stylesheet" href=" {{ url_for("static", filename='css/fontawesome-all.min.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for("static", filename='map/mapbox-gl.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for("static", filename='map/mapbox-gl-directions.css') }} ">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/client.css') }} ">
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="static/img/logo/loder.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+
+    <div class="header-area">
+        <div class="logo">
+            <div class="show_more" show_more>
+                <button class="ri-menu-2-line" ></button>
+                <div class="menu_">
+                    <p overview_>Shipment Overview</p>
+                    <p tracking_>Shipment Tracking</p>
+                </div>
+            </div>
+            <a href="/shipment"><img src="/static/img/logo/logo_.jpg">
+                <p class="title">Prorocketdelivery</p></a>
+        </div>
+
+        <a href="/logout" class="btn header-btn logout_btn">LogOut</a>
+    </div>
+</header>
+
+{% block body %} {% endblock %}
+</body>
+
+<script src=" {{ url_for("static", filename='js/vendor/jquery-1.12.4.min.js') }} "></script>
+<script src="{{ url_for("static", filename='map/mapbox-gl.js') }}"></script>
+<script src="{{ url_for("static", filename='map/mapbox-gl-directions.js') }}"></script>
+<script src="{{ url_for("static", filename='js/sweetalert.min.js') }}"></script>
+<script src="{{ url_for("static", filename='processor/request.js') }}"></script>
+<script>
+
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+
+
+</script>
+</html>

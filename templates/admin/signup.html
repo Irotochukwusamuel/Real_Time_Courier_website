@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Logistic Express - Admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename="img/favicon.ico") }} ">
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/admin.css') }} ">
+    <link rel="stylesheet" href="{{ url_for("static", filename='remixicon/remixicon.css') }}">
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <section class="signup">
+
+    </section>
+        <form class="form" signup_form autocomplete="off">
+            <p class="title">Admin Login</p>
+            <div class="box">
+                <i class="ri-user-3-line"></i>
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+             <div class="box">
+                <i class="ri-key-2-line"></i>
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <button class="submit" submit type="submit">Login</button>
+
+        </form>
+
+
+{% block body %} {% endblock %}
+</body>
+<script src=" {{ url_for("static", filename='js/vendor/jquery-1.12.4.min.js') }} "></script>
+<script src="{{ url_for("static", filename='js/sweetalert.min.js') }}"></script>
+<script src="{{ url_for("static", filename='processor/admin.js') }}"></script>
+
+</html>
