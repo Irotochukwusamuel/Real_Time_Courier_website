@@ -13,9 +13,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 admin_id = "admin"
 
 # THE DATABASE NAME
-database_name = 'shipping'
+database_name = 'database_name'
 db_host = 'localhost'
-db_username = 'root'
+db_username = 'your_database_username'
 db_password = ''
 
 # database_name = 'prorocke_logistics'
