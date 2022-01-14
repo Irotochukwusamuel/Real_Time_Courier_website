@@ -9,6 +9,8 @@ from sib_api_v3_sdk.rest import ApiException
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+admin_email = "your_email"
+
 # THE APP NAME
 admin_id = "admin"
 
@@ -31,7 +33,7 @@ chat_save_location = "static/chat/"
 # Configure API key authorization: api-key
 configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key[
-    'api-key'] = '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'
+    'api-key'] = 'send_in_blue_key'
 
 
 def ContactUs(from_, subject, message, name):
@@ -39,8 +41,8 @@ def ContactUs(from_, subject, message, name):
     subject = f'{subject}'
     html_content = f'<div style="width: 90%;margin: auto;border: 1px solid lightgray; background: white;height:55vh;"><div style="height: 90px;background: #424242;color: white;font-size: 23px;font-family: sans-serif;letter-spacing: 0.5px;text-align: center;display:table-cell;vertical-align: middle;width:100vw;">Contact Us</div><p style="padding: 20px;font-family: sans-serif;letter-spacing: 0.5px;color: #464141; font-size:15px;">Hello,</p><div style="padding: 0 20px 20px 20px;"><p style="font-family: sans-serif;letter-spacing: 0.5px;color: #464141; font-size: 13px;margin-bottom: 10px;">{message}</p><p style="margin-top:10px;font-size:14px">From {name}</p></div></div>'
     sender = {"name": f'{from_.split("@")[0]}', "email": f"{from_}"}
-    to = [{"email": 'prorocketdelivery2021@gmail.com', "name": 'Prorocketdelivery'}]
-    reply_to = {"email": "prorocketdelivery2021@gmail.com", "name": "Prorocketdelivery"}
+    to = [{"email": admin_email, "name": 'your company name'}]
+    reply_to = {"email": admin_email, "name": "your company name"}
     headers = {"Some-Custom-Name": "unique-id-1234"}
     params = {"parameter": "My param value", "subject": "New Subject"}
     send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(to=to, reply_to=reply_to, headers=headers,
